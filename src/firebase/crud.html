@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firebase v10 crud</title>
+    <style>
+    label {
+            display: inline-block;
+            font-size: 16px;
+            font-family:Arial, Helvetica, sans-serif;
+            width:90px;
+          }
+    input,select{
+                  width:180px;
+                  height: 30px;
+                  font-size: 16px;
+                  font-family: Arial, Helvetica, sans-serif;
+                  margin-left: 10 px;
+                }
+    button {
+             height:30px;
+             width:70px;
+           }
+    </style>
+</head>
+<body>
+    <label>First Name:</label>
+    <input type="text" id="FnameInp">
+    <br><br>
+    <label>Last Name:</label>
+    <input type="text" id="LnameInp">
+    <br><br>
+    <label>Department:</label>
+    <select id="DeptInp">
+    <option value="Development">Development</option>
+    <option value="Testing">Testing</option>
+    <option value="Management">Management</option>
+    <option value="Administration">Administration</option>
+    </select>
+    <br><br>
+    <label>Can Swim:</label>
+    <select id="SwimInp">
+    <option value="yes">YES</option>
+    <option value="no">NO</option>
+    </select>
+    <br><br>
+    <label>CNIC NO:</label>
+    <input type="number" id="CnicInp"/>
+    <br><br>
+    <button id="Addbtn">Add</button>
+    <button id="Retbtn" >Retrieve</button>
+    <button id="Updbtn">Update</button>
+    <button id="Delbtn">Delete</button>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase,ref,child,set,get,update,remove } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyCVGvFId48KHzFtElgjIBuyO071hMG0tSc",
+            authDomain: "crud-eff60.firebaseapp.com",
+            projectId: "crud-eff60",
+            storageBucket: "crud-eff60.appspot.com",
+            messagingSenderId: "358809462945",
+            appId: "1:358809462945:web:74713c3a6228531eefe8e0"
+                               };
+        const app = initializeApp(firebaseConfig);
+        const db=getDatabase();
+        let FnameInp=document.getElementById('FnameInp');
+        let LnameInp=document.getElementById('LnameInp');
+        let DeptInp=document.getElementById('DeptInp');
+        let SwimInp=document.getElementById('SwimInp');
+        let CnicInp=document.getElementById('CnicInp');
+        let Addbtn=document.getElementById('Addbtn');
+        let Retbtn=document.getElementById('Retbtn');
+        let Updbtn=document.getElementById('Updbtn');
+        let Delbtn=document.getElementById('Delbtn');
+        function AddData(){
+                            set(ref(db,'Employeeset/'+CnicInp.value),{
+                                nameofemployee:{
+                                                 firstname: FnameInp.value,
+                                                 lastname:LnameInp.value
+                                               },
+                                department:DeptInp.value,
+                                canswim: (SwimInp.value=="yes"),
+                                cnicno: Number(CnicInp.value)
+                            }).then(()=>{
+                                alert("data added successfully")
+                            }).catch((error)=>{
+                                 alert("unsuccessful")
+                                 console.log(error);
+                            })
+                          }
+       function RetData(){
+                           const dbRef=ref(db);
+                           get(child(dbRef,'Employeeset/'+CnicInp.value))
+                           .then((snapshot)=>{
+                               if(snapshot.exists){
+                                 FnameInp.value=snapshot.val().nameofemployee.firstname;
+                                 LnameInp.value=snapshot.val().nameofemployee.lastname;
+                                 DeptInp.value=snapshot.val().department;
+                                 SwimInp.value= snapshot.val().canswim? "yes":"no";
+                                                   }
+                               else{
+                                     alert("employee doest not exist");
+                                   }
+                           }).catch((error)=>{
+                                       alert("unsuccessful")
+                                       console.log(error);
+                                    })
+                         }
+       function UpdateData(){
+                            update(ref(db,'Employeeset/'+CnicInp.value),{
+                                nameofemployee:{
+                                                 firstname: FnameInp.value,
+                                                 lastname:LnameInp.value
+                                               },
+                                department:DeptInp.value,
+                                canswim: (SwimInp.value=="yes"),
+                            }).then(()=>{
+                                alert("data updated successfully")
+                            }).catch((error)=>{
+                                 alert("unsuccessful")
+                                 console.log(error);
+                            })
+                          }
+      function DeleteData(){
+                            remove(ref(db,'Employeeset/'+CnicInp.value))
+                            .then(()=>{
+                                alert("data deleted successfully")
+                            }).catch((error)=>{
+                                 alert("unsuccessful")
+                                 console.log(error);
+                            })
+                           }
+      Addbtn.addEventListener('click',AddData);
+      Retbtn.addEventListener('click',RetData);
+      Updbtn.addEventListener('click',UpdateData);
+      Delbtn.addEventListener('click',DeleteData);
+      </script>
+</body>
+</html>

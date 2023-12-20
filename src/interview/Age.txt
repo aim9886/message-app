@@ -1,0 +1,58 @@
+To create a ReactJS program that displays "Welcome" if your age is greater than 18 and
+ "Exit" if your age is less than 18, you can follow these steps:
+
+1. Set up a new ReactJS project or use an existing one.
+2. Create a new functional component, or use an existing one, to display the output based on age.
+3. Create a state variable to store the age.
+4. Create an input field where the user can enter their age.
+5. Use conditional rendering to display "Welcome" or "Exit" based on the age entered by the user.
+
+Here's a sample code for this ReactJS program:
+
+import React, { useState } from 'react';
+
+function App() {
+  // Step 3: Create a state variable for age
+  const [age, setAge] = useState('');
+
+  // Step 5: Use conditional rendering to display output
+  const renderOutput = () => {
+    if (age === '') {
+      return null; // Output is initially empty
+    } else if (parseInt(age) > 18) {
+      return <p>Welcome</p>;
+    } else {
+      return <p>Exit</p>;
+    }
+  };
+
+  return (
+    <div className="App">
+      <h1>Age Checker</h1>
+      {/* Step 4: Create an input field */}
+      <input
+        type="number"
+        placeholder="Enter your age"
+        value={age}
+        onChange={(e) => setAge(e.target.value)}
+      />
+      {/* Step 5: Display output */}
+      {renderOutput()}
+    </div>
+  );
+}
+
+export default App;
+
+
+In this code:
+
+- We create a state variable `age` using the `useState` hook to store the user's age.
+- We create an input field where the user can enter their age. The `onChange`
+ event handler updates the `age` state variable.
+- We define a function `renderOutput` that checks the value of `age` and
+ returns the appropriate output based on the condition.
+- We use `{renderOutput()}` to display the output in the JSX based on the value of `age`.
+
+When the user enters their age, the output will change accordingly,
+ displaying either "Welcome" or "Exit" based on the age entered.

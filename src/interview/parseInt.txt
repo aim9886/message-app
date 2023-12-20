@@ -1,0 +1,18 @@
+The `parseInt` function is used to convert a string into an integer (whole number) in JavaScript.
+ In the provided code, it's used to ensure that the value entered in the input field is treated
+  as an integer when comparing it to the age conditions (greater than, less than, or equal to 18).
+
+Here's why `parseInt` is used:
+
+1. **User Input as String**: When a user enters their age into an input field,
+ it's received as a string by default. For example, if the user enters "18" in the input field,
+  it's treated as the string `"18"`, not the number `18`.
+
+2. **Comparison**: In order to compare the entered age with the conditions (`> 18`, `< 18`, `=== 18`),
+ it's necessary to convert the string into an integer. If you don't convert it,
+  JavaScript will perform string comparison, which may not give the correct results for
+   numerical comparisons.
+
+By using `parseInt`, you convert the string representation of the age into an actual integer,
+ ensuring that the numerical conditions work as expected. For instance, `parseInt("18")`
+  returns the integer `18`, which can be correctly compared with the conditions.

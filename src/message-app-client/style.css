@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f1f1f1;
+  font-family: "Poppins";
+}
+
+header {
+  background: #fff;
+}
+
+.container {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  color: yellow;
+  padding: 0.5em 0;
+  cursor: pointer;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 400px;
+  scroll-behavior: smooth;
+}
+
+
+.text-area {
+  display: flex;
+  align-items: center;
+}
+
+.message-area {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 75vh;
+}
+
+.user__message {
+  background-color: #fff;
+  width: fit-content;
+  border-radius: 8px;
+  padding: 0.2em 1em;
+  margin-left: auto;
+  margin-top: auto;
+  word-break: break-word;
+}
+
+.user__message + .user__message {
+  margin-top: 1em;
+}
+
+.user__message--others {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+input {
+  padding: 0.7em;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  font-size: 1rem;
+  font-weight: 700;
+  background: yellow;
+  border: 0;
+  color: #fff;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: color 100ms;
+}
+
+
+/* Popup Style*/
+
+.blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: background-color;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.popup {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  max-width: 600px;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+}
+
+.popup__input {
+  display: block;
+  margin: 1em 0;
+  border-radius: 1em;
+}
+
+.popup__btn {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  padding: .5em 1.5em;
+  border-radius: 100px;
+  transition: opacity 150ms;
+  cursor: pointer;
+}
+
+.popup__btn:hover {
+  opacity: .8;
+}
+
+
+/* ScrollBar Style*/
+
+
+/* Width and height of the scrollbar track */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* Style of the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the thumb */
+  border-radius: 6px; /* Rounded corners of the thumb */
+}
+
+/* Style on hover for the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color on hover */
+}

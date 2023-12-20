@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "coursename": "Java",
+      "authorname": "James Gosling",
+      "id": 2
+    },
+    {
+      "coursename": "Java Script",
+      "authorname": "Brendon Eich",
+      "id": 3
+    },
+    {
+      "coursename": "SQL",
+      "authorname": "Donald Chapman",
+      "id": 4
+    },
+    {
+      "coursename": "React Js",
+      "authorname": "Jordan Walke",
+      "id": 5
+    },
+    {
+      "coursename": "Node Js",
+      "authorname": "Ryan Dhal",
+      "id": 6
+    },
+    {
+      "coursename": "Servlet",
+      "authorname": "Joseph",
+      "id": 7
+    },
+    {
+      "coursename": "K.G.F",
+      "authorname": "Yash",
+      "id": 8
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

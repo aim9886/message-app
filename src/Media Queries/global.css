@@ -1,0 +1,118 @@
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navBlock{
+    border: 2px solid red;
+    /* border-color: rgb(252, 6, 157); */
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 85px;
+    margin: auto;
+    background-color: white;
+} */
+
+/* .menuBlock ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.menuBlock{
+    display: flex;
+    justify-content: space-around;
+}
+
+.menuBlock ul{
+    display: flex;
+    justify-content: space-around;
+    width: 380px;
+    list-style: none;
+    font-weight: bolder;
+    color: black;
+}
+
+img{
+    width: 168px;
+    height: 120px;
+}
+
+input{
+    height: 45px;
+    width: 370px;
+    border: none;
+    color: blueviolet;
+}
+
+.inputDiv{
+    border-radius: 5px;
+    border: 2px solid rgb(221, 223, 221);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.inputDiv img{
+    width: 30px;
+    height: 30px;
+} */
+
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* Media Queries */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014__340.jpg");
+    background-size: cover;
+}
+
+/* mobile view */
+@media screen and (max-width:400px){
+   h1{
+    font-size: 20px;
+    background-color: blueviolet;
+    padding: 30px;
+   }
+}
+
+/* tab view */
+@media screen and (min-width:401px) and (max-width:700px){
+   div>h1{
+     font-size: 25px;
+     background-color: aqua;
+     padding: 40px;
+    }
+ }
+ /* laptop view */
+ @media screen and (min-width:701px) and (max-width:1200px){
+    div>h1{
+     font-size: 30px;
+     background-color: beige;
+     padding: 60px;
+
+    }
+ }
+ /* big screen */
+ @media screen and (min-width:1201px) {
+    div>h1{
+     font-size: 35px;
+     background-color: yellowgreen;
+     padding: 80px;
+
+    }
+ }
+
+ /* img{
+    height: 200px;
+    width: 200px;
+ } */
+

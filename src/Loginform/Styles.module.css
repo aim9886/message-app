@@ -1,0 +1,12 @@
+.icon{
+    position: relative;
+    z-index: 11px;
+    left: 150px;
+    top: 25px;
+}
+
+.mainDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
